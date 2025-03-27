@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy AI Space</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        iframe { width: 100%; height: 90vh; border: none; }
+    </style>
+</head>
+<body>
+    <h2>AI Space Viewer</h2>
+    
+    <!-- Pilih ID Proxy -->
+    <label for="proxy-select">Pilih Model AI:</label>
+    <select id="proxy-select">
+        <option value="1">Kingnish SDXL Flash</option>
+        <option value="2">Artificial Guy RealVis XL</option>
+        <option value="3">Asahina Animagine XL</option>
+        <option value="4">Kingnish Instant Image</option>
+        <option value="5">Kingnish Realtime Flux</option>
+    </select>
+
+    <button onclick="loadAI()">Muat AI</button>
+    
+    <iframe id="proxy-frame" src="" loading="lazy"></iframe>
+
+    <script>
+        function loadAI() {
+            let selectedId = document.getElementById("proxy-select").value;
+            let iframe = document.getElementById("proxy-frame");
+
+            // Ganti URL dengan Cloudflare Worker Proxy kamu
+            let proxyUrl = "https://proxy-ai-blog.riswan-nopiyar-01.workers.dev/?id=" + selectedId;
+
+            iframe.src = proxyUrl;
+        }
+    </script>
+</body>
+</html>
