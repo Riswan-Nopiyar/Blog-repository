@@ -1,0 +1,997 @@
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/4.25.0/gradio.js"
+></script>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0LL67llkXqq2wWz8ZNHgRVod649B3AoPFBlZ4TiJCDssuzqCUXZf79l_QIeAkK77o61HQ2apKfGRYZfjkTC31Ap-5LZjwAWtcb_t-lHA4OkxoimgBY09ApMGuErNs4SnCKiYyP_ooCQ11WbyQUKXJuji24ys0BczjUckMLfmAv9oNyVxezmEqm_tCoo7L/s1920/Ai%20generate%20image.webp" style="display: block; padding: 1em 0; text-align: center; "><img alt="Contoh hasil Ai Pembuat Gambar" border="0" width="600" data-original-height="1006" data-original-width="1920" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0LL67llkXqq2wWz8ZNHgRVod649B3AoPFBlZ4TiJCDssuzqCUXZf79l_QIeAkK77o61HQ2apKfGRYZfjkTC31Ap-5LZjwAWtcb_t-lHA4OkxoimgBY09ApMGuErNs4SnCKiYyP_ooCQ11WbyQUKXJuji24ys0BczjUckMLfmAv9oNyVxezmEqm_tCoo7L/s600/Ai%20generate%20image.webp" width="100%"/></a></div>
+Text to Image AI itu kecerdasan buatan yang bisa bikin gambar dari teks yang kita ketik. Jadi bayangin zaman dulu, kita harus sibuk cari gambar di Google sambil was-was kena hak cipta. Sekarang mah tinggal ketik dan Generate! Keluar deh gambar sesuai yang kita mau. Dengan AI ini, kita bisa langsung bikin karya seni yang unik dan menarik dengan kata-kata bahasa inggris. Yang berdampak kreativitas jadi semakin bebas 🙌🏻.
+
+
+
+    <style>
+     
+      .emoji-kebawah {
+            display: inline-block;
+            animation: kebawahJari 1s infinite;
+        }
+
+        @keyframes kebawahJari {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(7px);
+            }
+        }
+      
+     /* ========== FaQ ========== */
+      .post-blog-faq-item {
+    margin-bottom: 10px;
+    border: 1px solid rgba(125, 125, 125, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.post-blog-faq-head {
+    background-color: #f9f9f9;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+      
+     .drK .post-blog-faq-head {
+    background-color: #333333;
+}
+
+.post-blog-faq-head::after {
+    content: '\25BC';
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.post-blog-faq-head.active::after {
+    transform: rotate(180deg);
+}
+
+      .post-blog-faq-content {
+    display: none;
+    padding: 10px;
+    background-color: #ffffff;
+    animation: postSlideDown 0.3s forwards;
+}
+.drK .post-blog-faq-content {
+    background-color: var(--darkBs);
+}
+
+@keyframes postSlideDown {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 1000px; opacity: 1; }
+}
+
+@keyframes postSlideUp {
+    from { max-height: 1000px; opacity: 1; }
+    to { max-height: 0; opacity: 0; }
+}
+      
+       /* ========== tutup FaQ ========== */
+      
+      .ntfC {
+                display: none;
+            }
+
+            .icon-flash {
+                stroke: red;
+                stroke-width: 10;
+              	fill:#FFFF55 !important;
+            }
+      
+       .icon-fire {
+                stroke: red;
+                stroke-width: 10;
+              	fill:#ffca42 !important;
+            }
+
+
+
+            .post-tab-body {
+                margin: 0 -10px 0 -10px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                position: relative; /* Add relative positioning to .post-tab-body */
+            }
+
+            .drK .post-tab-body {
+                border: 1px solid #555;
+                background-color: var(--darkBs);
+            }
+
+            .post-tab-container {
+               	border-radius: 8px 8px 0 0;
+                background-color: #f9f9f9;
+                white-space: nowrap;
+                display: flex;
+                margin: 0;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding-bottom: 10px;
+                align-items: center; /* Ensure the scroll buttons align with the tab items */
+            }
+
+            .drK .post-tab-container {
+              background-color:#333333;
+            }
+
+            .post-tab-container > * {
+                margin-bottom: -20px;
+            }
+
+            .post-tab-container::-webkit-scrollbar-track {
+                background: rgba(100, 100, 100, 0.1);
+            }
+
+            .drK .post-tab-container::-webkit-scrollbar-track {
+                background: rgba(100, 100, 100, 0.4);
+            }
+
+            .drK .post-tab-container::-webkit-scrollbar-thumb {
+                background: rgba(200, 200, 200, 0.7);
+            }
+
+            .post-tab {
+                opacity: .4;
+                padding: 6px 13px;
+                border: 1px solid transparent;
+                border-bottom: none;
+                cursor: pointer;
+                margin-bottom: -1px;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s;
+            }
+
+            .post-tab:hover {
+                opacity: 1;
+                color: var(--linkC);
+            }
+
+            .drK .post-tab:hover {
+                opacity: 1;
+                color: var(--darkU);
+            }
+
+            .post-tab.active {
+                color: var(--linkC);
+                opacity: 1;
+                background-color: #f9f9f9;
+                border-bottom: 4px solid var(--linkC);
+            }
+
+            .post-tab.active .post-tab-icon {
+                fill: var(--linkC);
+            }
+
+
+
+            .drK .post-tab.active {
+                color: var(--darkU);
+                opacity: 1;
+               background-color:#333333;
+                border-bottom: 4px solid var(--darkU);
+            }
+
+            .drK .post-tab.active .post-tab-icon {
+                fill: var(--darkU);
+            }
+
+
+
+            .post-tab-content {
+                padding: 0 6px;
+                border-radius: 0 0 8px 8px;
+                border: 1px solid #ccc;
+            }
+
+            .drK .post-tab-content {
+                border: 1px solid #555;
+                background-color: var(--darkBs);
+            }
+
+            .post-tab-content p {
+                margin: 0;
+            }
+
+            .post-tab-content h4 {
+                margin: -20px 0 3px;
+            }
+
+            .post-tab-button-scroll {
+              	font-weight: bold;
+                position: absolute;
+                width: 43px;
+                height: 57px;
+                background-color: rgba(72, 249, 84, 0.5);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                z-index: 1;
+            }
+                 .drK .post-tab-button-scroll {
+
+                color: white;
+            }
+
+
+
+            .post-tab-button-scroll.left {
+                background: linear-gradient(90deg, var(--linkB) 10%, rgba(72, 249, 85, 0.00) 100%), transparent;
+                left: 0;
+               border-radius: 8px 0 0 0;
+            }
+
+            .post-tab-button-scroll.right {
+                background: linear-gradient(270deg, var(--linkB) 10%, rgba(72, 249, 85, 0.00) 100%), transparent;
+                right: 0;
+               border-radius: 0 8px 0 0;
+            }
+
+
+            .drK .post-tab-button-scroll.left {
+                background: linear-gradient(90deg, rgba(72, 249, 85, 0.80) 10%, rgba(72, 249, 85, 0.00) 100%), transparent;
+                left: 0;
+               border-radius: 8px 0 0 0;
+            }
+
+            .drK .post-tab-button-scroll.right {
+                background: linear-gradient(270deg, rgba(72, 249, 85, 0.80) 10%, rgba(72, 249, 85, 0.00) 100%), transparent;
+                right: 0;
+               border-radius: 0 8px 0 0;
+            }
+
+            .post-tab-button-scroll.hidden {
+                display: none;
+            }
+      
+     .video-tutorial-ai {
+       margin-top:10px;
+    width: 100%;
+    /* Menentukan aspect ratio (misalnya 16:9) */
+    padding-top: 56.25%; /* Ini adalah 9 / 16 * 100% */
+    position: relative;
+}
+
+.video-tutorial-ai iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+                   .iframe-nav {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 80px;
+                        background: var(--bodyB);
+                        z-index: 3;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      	border-radius: 8px 8px 0 0 ;
+                    }
+
+                  .drK .iframe-nav {
+                        background: var(--darkBs);
+                    }
+
+              		.AiFrame {
+                      	border: 1px solid rgba(125, 125, 125, 0.3);
+                        width: 100%;
+                        height: 1600px;
+                      	border-radius:8px;
+                      	background: var(--bodyB);
+                    }
+
+                  .drK .AiFrame {
+                      background: var(--darkBs);
+                    }
+
+
+
+                  /* Container for iframe and spinner */
+                    .iframe-container {
+                        position: relative;
+                        width: 100%;
+                        height: 1600px;
+                    }
+
+                  @media (max-width: 700px) {
+                        .AiFrame {
+                            height: 1880px;
+                        }
+                      .iframe-container {
+                        height: 1890px;
+                    }
+                    }
+
+
+                    /* Spinner Styles */
+                  .iframe-spinner {
+                        border: 20px solid rgba(0, 0, 0, 0.1);
+                        border-left-color: var(--linkC);
+                        border-radius: 50%;
+                        width: 180px;
+                        height: 180px;
+                        animation: spin 1s linear infinite;
+                        position: absolute;
+                        top: 11%;
+                        left: 50%;
+                        transform: translate(50%, -50%);
+                    }
+                    .drK .iframe-spinner {
+                        border: 20px solid rgba(0, 0, 0, 0.4);
+                        border-left-color: var(--darkU);
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: translate(-50%, -50%) rotate(0deg);
+                        }
+                        100% {
+                            transform: translate(-50%, -50%) rotate(360deg);
+                        }
+                    }
+
+
+                    /* Overlay Styles */
+                    .iframe-loading-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--bodyB);
+                        z-index: 3;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                   .drK .iframe-loading-overlay {
+                        background: var(--darkBs);
+                    }
+
+                    /* Hide overlay by default */
+                    .hidden {
+                        display: none;
+                    }
+      
+      /* ============= GPU ============ */
+       .running-gpu-type {
+    display: inline-flex;
+    cursor: progress;
+    align-items: center;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 0.75rem; /* text-xs */
+    flex-shrink: 0;
+    margin: 10px 0 10px; /* mr-2 */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1px solid #5cff8d76; /* border-green-100 */
+    color: #047857; /* text-green-700 */
+  }
+  
+  .running-gpu-type.dark {
+    color: #10b981; /* dark:text-green-500 */
+  }
+  
+  .running-gpu-type > .first-part {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    margin: -3px;
+    background-color: #91ffb350; /* bg-green-50 */
+    border-right: 1px solid #bbf7d0; /* border-r border-green-100 */
+  }
+   .drK .running-gpu-type > .first-part {
+    color: #a6ffc1;
+  }
+    
+  .running-gpu-type > .first-part:hover {
+    background-color: #ccfbf1; /* hover:bg-green-100/70 */
+    color: #065f46; /* hover:text-green-800 */
+  }
+  
+  .running-gpu-type > .first-part .skewed {
+    display: inline-block;
+    transform: skewX(-12deg);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .running-gpu-type > .second-part {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0 0 0.5rem; /* px-2 */
+  }
+  
+  .running-gpu-type > .second-part svg {
+    height: 0.625rem; /* h-2.5 */
+    width: 0.625rem; /* w-2.5 */
+    margin-right: 0.375rem; /* mr-1.5 */
+    animation: spin-slow-reversed 1s linear infinite;
+  }
+    
+     .running-gpu-type > .second-part svg path{
+   fill:#047857;
+  }
+      
+   .drK .running-gpu-type > .second-part svg path{
+   fill:#a6ffc1;
+  }
+  
+  @keyframes spin-slow-reversed {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+   .ta-R {
+    text-align: right;
+  }
+      
+    </style>
+ 
+    <div class="post-blog-faq-item" style="margin-top:20px">
+    <div class="post-blog-faq-head">Video Tutorial 📢</div>
+    <div class="post-blog-faq-content">
+        <div class="separator video-tutorial-ai" style="clear: both; text-align: center;"><object aria-label="Upload video" class="BLOG_video_class" contentid="4567f0e8c85ae4aa" id="BLOG_video-4567f0e8c85ae4aa"></object></div>
+    </div>
+</div>
+    
+     <div class="post-blog-faq-item">
+    <div class="post-blog-faq-head">Konfigurasi dan Input Prompt 📢</div>
+    <div class="post-blog-faq-content">
+      <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsRTd2rR2HCOwQacirXw4VNLA9xP8wzj1ctXCCpxiH9LQpqBdB7K06-OBKU9__dskD3KOljM_v79nwAXZ71OB8oecwPavMpGnz8egg0jwHOShp7eVqkoOHGj2di5eWrUfWJXCTWkVFXJHSj6DG8siXvipglCzAzkGzSr36dYSIXGT3fF-OjXApyiNut_bO/s1600/Screenshot%20%28392%29.webp" style="display: block; padding: 1em 0; text-align: center; "><img alt="Contoh prompt" border="0" data-original-height="245" data-original-width="100%" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsRTd2rR2HCOwQacirXw4VNLA9xP8wzj1ctXCCpxiH9LQpqBdB7K06-OBKU9__dskD3KOljM_v79nwAXZ71OB8oecwPavMpGnz8egg0jwHOShp7eVqkoOHGj2di5eWrUfWJXCTWkVFXJHSj6DG8siXvipglCzAzkGzSr36dYSIXGT3fF-OjXApyiNut_bO/s1600/Screenshot%20%28392%29.webp"/></a></div>
+        <ol>
+        <li>Klik <span class="courier-new">advanced settings</span> atau <span class="courier-new">advanced options</span>: Jika ingin menyesuaikan konfigurasi pengolahan model pada gambar</li>
+        <li>Klik Kalimat dibawah <span class="courier-new">Examples</span>: Jika ingin memahami contoh gambar yang dihasilkan pada input prompt</li>
+      </ol>
+    </div>
+</div>
+    
+      <div class="post-blog-faq-item">
+        <div class="post-blog-faq-head">Penyebab Error⚠️</div>
+    <div class="post-blog-faq-content">
+      <ul><strong>Faktor Eksternal</strong>
+        <li>🚫Hindari aktivitas mengklik hal-hal lain pada saat <span class="courier-new">Generate</span> gambar berlangsung.</li>
+          <li>🚫Hindari <span class="courier-new">Generate</span> gambar secara bersamaan, mungkin akan membuat terhentinya salah satu proses.</li>
+         <li>🚫Koneksi lemah/hilang saat <span class="courier-new">Generate</span> gambar maka akan terputus dan Error.</li>
+          <li>🚫Hindari kosongnya input prompt saat <span class="courier-new">Generate</span> gambar.</li>
+      </ul>
+      <ul><strong>Faktor internal</strong>
+          <li>⚠️<span class="courier-new">Server</span> terputus, tidak menampilkan halaman yang seharusnya.</li>
+         <li>⚠️Tidak berfungsi sama sekali karena <span class="courier-new">GPU</span> terhenti.</li>
+        <li>⚠️Banyaknya antrian proses pada <span class="courier-new">Model</span> sehingga terputus ditengah proses <span class="courier-new">Generate</span>.</li>
+        <li>⚠️Waktu tunggu tidak sesuai, berimbas melambatnya proses <span class="courier-new">Sistem</span>, karena adanya aktivitas antrian yang belum selesai.</li>
+        <li>⚠️Pembatasan <span class="courier-new">Request</span> pada user, dan memberikan efek jeda sementara.</li>
+      </ul>
+    </div>
+</div>
+    
+    
+
+
+   <div style="align-items: center; display: flex; justify-content: center; margin-top:20px">
+    <img alt="phyton" border="0" data-original-height="50" data-original-width="50" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjObXXpEWd-tlEpVkRFIdW52ygnCXLXzZWU3BwE8X3LdbXPs3ukDJjuJqtiIs3mB36MQ5WbAH5O2aiMYcOIyu8r6T_yaecWqpe2FnMRIr69OycaJFgCquXEP91NLeZR1EGM-wsiJWEBW3QSmRJxfy6ZicXZexxoD2u6vG1s5F7uVpm5AvR4t4EUy6JUXDTR/s1600/phyton-1%20%281%29.webp" style="box-shadow: none; margin: auto 7px;" />
+<span style="font-size:2rem">+</span>
+     
+       <!--  <img alt="Tensorflow" border="0" data-original-height="50" data-original-width="50" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6iVaItnPXAEe-Nc_ppkE8Fg1hFvPM8eYGv4zQOEN9mCzT6Wn8w3deZjpRltbZ7lxZ9zckXrCrFQenS8qZz17LBz98dbVyhNHrVNryKd3v3jF6Zrru0vRQfy7Z2G6Qw7pMsSBliMUVdNBsdNoEDs757vlTvSGMgiciN8Q5OrDNPesD6zOBLceicKe13uVa/s320/15658638%20%281%29.webp" style="box-shadow: none; margin: auto 7px;" />
+<span style="font-size:2rem">+</span> -->
+
+    <img alt="gradio" border="0" data-original-height="44" data-original-width="50" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgF4Jk-NhOupWEY9Ktq3T1IFVn9KFc0LrZzI73Lb5foxDlSysiuhsOEIIi2RXabo5AbMnY7bGXoiECB0U_lmnpGWJ4on42oJXeDsqYdMWd8exl5AjekuVR-x6Edj_TrUwLwzmTyYOFpaM1kkJkZrFIBBlzqlZLdJZ1-V0_XdLto3VHdjS9UtE5DeKfm7igC/s1600/gradio-icon-logo-908AE1836C-seeklogo.com%20%281%29.png" style="box-shadow: none; margin: auto 7px;" /> <span style="font-size:2rem">+</span>
+  
+  <img alt="huggingface" border="0" data-original-height="50" data-original-width="50" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5u3tawe00Cm8iC5rvec2hoB3jIJdjBL02CWKDXGzdrtrGWiT7xpDWC3B2LKY_1vB3eVMVjfgzmawX_HVDnorI1SrxBBktnan_gr4RMPcGEKuYxb1T3woCeKiNCJd2hP1dR17tJ_wUs3_8VocbYk3Mzyj7_nq36XDPwIBWxNWTZzjuT_sJg_VrRFBJWn0e/s1600/c3635b59-a3d2-444a-b636-a9d0061dcdde%20%281%29.png" style="box-shadow: none; margin: auto 7px;" />
+  </div>
+
+
+<h4 style="text-align: center; margin-top:1em;"> Silahkan langsung dicoba dibawah ini  <span class="emoji-kebawah">👇🏻</span></h4>
+    
+   
+    <section class="post-tab-body">
+      <div class="post-tab-button-scroll left hidden" id="scroll-left"><<</div>
+      <div class="post-tab-button-scroll right" id="scroll-right">>></div>
+      <div class="post-tab-container" id="tab-container">
+        <div class="post-tab active" onclick="showTab('post-content1')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="post-tab-icon"
+            height="24px"
+            viewBox="0 -960 960 700"
+            width="24px"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0 0v-560 560Zm80-80h400q12 0 18-11t-2-21L586-459q-6-8-16-8t-16 8L450-320l-74-99q-6-8-16-8t-16 8l-80 107q-8 10-2 21t18 11Zm60-280q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"
+            />
+          </svg>
+          SDXL Flash⚡
+        </div>
+          <div class="post-tab" onclick="showTab('post-content2')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="post-tab-icon"
+            height="24px"
+            viewBox="0 -960 960 700"
+            width="24px"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0 0v-560 560Zm80-80h400q12 0 18-11t-2-21L586-459q-6-8-16-8t-16 8L450-320l-74-99q-6-8-16-8t-16 8l-80 107q-8 10-2 21t18 11Zm60-280q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"
+            />
+          </svg>
+           RealVisXL✨
+        </div>
+        
+         <div class="post-tab" onclick="showTab('post-content3')">
+           <svg xmlns="http://www.w3.org/2000/svg"  class="post-tab-icon" height="24px" viewBox="0 -960 960 800" width="24px"><path d="m400-80-20-360-127-73-14 52 81 141-69 40-99-170 48-172 230-132-110-110 56-56 184 183-144 83 48 42 328-268 48 56-340 344-20 400h-80ZM200-680q-33 0-56.5-23.5T120-760q0-33 23.5-56.5T200-840q33 0 56.5 23.5T280-760q0 33-23.5 56.5T200-680Z"/></svg>
+           Animagine XL 3.1🌸
+        </div>
+        <div class="post-tab" onclick="showTab('post-content4')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="post-tab-icon"
+            height="24px"
+            viewBox="0 -960 960 700"
+            width="24px"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0 0v-560 560Zm80-80h400q12 0 18-11t-2-21L586-459q-6-8-16-8t-16 8L450-320l-74-99q-6-8-16-8t-16 8l-80 107q-8 10-2 21t18 11Zm60-280q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"
+            />
+          </svg>
+          PixArt⚡
+        </div>
+        <div class="post-tab" onclick="showTab('post-content5')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="post-tab-icon" height="24px" viewBox="0 -960 960 800" width="24px"><path d="M360-400h400L622-580l-92 120-62-80-108 140Zm-40 160q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
+          DALL•E 3 XL v2🔒
+        </div>
+        <div class="post-tab" onclick="showTab('post-content6')">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 800" width="24px"><path d="M360-280q-33 0-56.5-23.5T280-360v-440q0-33 23.5-56.5T360-880h235q-8 19-11.5 39t-3.5 41H360v408q45-42 101.5-65T580-480q61 0 118 23t102 65q1 1 0 0v-188q21 0 41-3.5t39-11.5v235q0 33-23.5 56.5T800-280H360Zm220-350ZM224-81q-33 4-58.5-16T135-150L80-587q-5-33 16-59t54-30l50-6v80l-40 5 54 437 298-40h218q0 26-21 43.5T661-135L224-81Zm-10-79Zm493-540 71-200h44l72 200h-43l-15-44h-72l-15 44h-42Zm67-74h52l-26-82-26 82ZM580-400q-35 0-69 10t-63 30h264q-29-20-63-30t-69-10Zm0-340q46 0 78 32t32 78q0 46-32 78t-78 32q-46 0-78-32t-32-78q0-46 32-78t78-32Zm0 80q-13 0-21.5 8.5T550-630q0 13 8.5 21.5T580-600q13 0 21.5-8.5T610-630q0-13-8.5-21.5T580-660Z"/></svg>
+          Flux✨
+        </div>
+        
+       
+        
+        <div class="post-tab" onclick="showTab('post-content99')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="post-tab-icon"
+            height="24px"
+            viewBox="0 -960 960 910"
+            width="24px"
+            fill="#5f6368"
+          >
+            <path
+              d="M740-208v-112h-40v128l86 86 28-28-74-74ZM480-800 243-663l237 137 237-137-237-137ZM120-321v-318q0-22 10.5-40t29.5-29l280-161q10-5 19.5-8t20.5-3q11 0 21 3t19 8l280 161q19 11 29.5 29t10.5 40v159h-80v-116L479-434 200-596v274l240 139v92L160-252q-19-11-29.5-29T120-321ZM720 0q-83 0-141.5-58.5T520-200q0-83 58.5-141.5T720-400q83 0 141.5 58.5T920-200q0 83-58.5 141.5T720 0ZM480-491Z"
+            />
+          </svg>
+          Belum tersedia⏳
+        </div>
+      </div>
+      
+      <div class="post-tab-content" id="post-content1">
+            <div class="ta-R">
+        <div class="running-gpu-type">
+  <div class="first-part">
+    <span>Running on <span class="skewed">Zero</span></span>
+  </div>
+  <div class="second-part">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+      <path d="M7.48877 6.75C7.29015 6.75 7.09967 6.82902 6.95923 6.96967C6.81879 7.11032 6.73989 7.30109 6.73989 7.5C6.73989 7.69891 6.81879 7.88968 6.95923 8.03033C7.09967 8.17098 7.29015 8.25 7.48877 8.25C7.68738 8.25 7.87786 8.17098 8.0183 8.03033C8.15874 7.88968 8.23764 7.69891 8.23764 7.5C8.23764 7.30109 8.15874 7.11032 8.0183 6.96967C7.87786 6.82902 7.68738 6.75 7.48877 6.75ZM7.8632 0C11.2331 0 11.3155 2.6775 9.54818 3.5625C8.80679 3.93 8.47728 4.7175 8.335 5.415C8.69446 5.565 9.00899 5.7975 9.24863 6.0975C12.0195 4.5975 15 5.19 15 7.875C15 11.25 12.3265 11.325 11.4428 9.5475C11.0684 8.805 10.2746 8.475 9.57813 8.3325C9.42836 8.6925 9.19621 9 8.89665 9.255C10.3869 12.0225 9.79531 15 7.11433 15C3.74438 15 3.67698 12.315 5.44433 11.43C6.17823 11.0625 6.50774 10.2825 6.65751 9.5925C6.29056 9.4425 5.96855 9.2025 5.72891 8.9025C2.96555 10.3875 0 9.8025 0 7.125C0 3.75 2.666 3.6675 3.54967 5.445C3.92411 6.1875 4.71043 6.51 5.40689 6.6525C5.54918 6.2925 5.78882 5.9775 6.09586 5.7375C4.60559 2.97 5.1972 0 7.8632 0Z"></path>
+    </svg> 
+  </div>
+</div>
+          </div>
+        <h4>
+          SDXL Flash⚡
+        </h4>
+        <p>
+          SDXL Flash menggunakan pendekatan Stable Diffusion untuk menghasilkan
+          gambar berkualitas tinggi dari input teks, dengan fokus pada
+          kestabilan dan kecepatan proses generasi gambar.
+        </p>
+        <div class="iframe-container">
+          <div class="iframe-overlay" class="iframe-loading-overlay" style="display:none;">
+            <div class="iframe-spinner"></div>
+          </div>
+          <iframe
+            class="AiFrame"
+            src="https://kingnish-sdxl-flash.hf.space/"
+            title="Ai Membuat gambar"
+            frameborder="0"
+            scrolling="yes"
+           referrerPolicy="no-referrer"
+          ></iframe>
+        </div>
+      </div>
+      
+       <div class="post-tab-content" id="post-content2" style="display:none;">
+             <div class="ta-R">
+        <div class="running-gpu-type">
+  <div class="first-part">
+    <span>Running on <span class="skewed">Zero</span></span>
+  </div>
+  <div class="second-part">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+      <path d="M7.48877 6.75C7.29015 6.75 7.09967 6.82902 6.95923 6.96967C6.81879 7.11032 6.73989 7.30109 6.73989 7.5C6.73989 7.69891 6.81879 7.88968 6.95923 8.03033C7.09967 8.17098 7.29015 8.25 7.48877 8.25C7.68738 8.25 7.87786 8.17098 8.0183 8.03033C8.15874 7.88968 8.23764 7.69891 8.23764 7.5C8.23764 7.30109 8.15874 7.11032 8.0183 6.96967C7.87786 6.82902 7.68738 6.75 7.48877 6.75ZM7.8632 0C11.2331 0 11.3155 2.6775 9.54818 3.5625C8.80679 3.93 8.47728 4.7175 8.335 5.415C8.69446 5.565 9.00899 5.7975 9.24863 6.0975C12.0195 4.5975 15 5.19 15 7.875C15 11.25 12.3265 11.325 11.4428 9.5475C11.0684 8.805 10.2746 8.475 9.57813 8.3325C9.42836 8.6925 9.19621 9 8.89665 9.255C10.3869 12.0225 9.79531 15 7.11433 15C3.74438 15 3.67698 12.315 5.44433 11.43C6.17823 11.0625 6.50774 10.2825 6.65751 9.5925C6.29056 9.4425 5.96855 9.2025 5.72891 8.9025C2.96555 10.3875 0 9.8025 0 7.125C0 3.75 2.666 3.6675 3.54967 5.445C3.92411 6.1875 4.71043 6.51 5.40689 6.6525C5.54918 6.2925 5.78882 5.9775 6.09586 5.7375C4.60559 2.97 5.1972 0 7.8632 0Z"></path>
+    </svg> 
+  </div>
+</div>
+          </div>
+        <h4>
+          RealVisXL✨
+        </h4>
+        <p>
+          RealVisXL adalah model text-to-image AI yang berfokus pada menciptakan gambar hyper-realistis, sangat cocok untuk berbagai gaya visual termasuk potret, fotografi sinematik, dan karakter fantasi maupun fiksi ilmiah.
+        </p>
+        <div class="iframe-container" style="height:2300px!important">
+          <div class="iframe-overlay" class="iframe-loading-overlay">
+            <div class="iframe-spinner"></div>
+          </div>
+          <iframe
+            class="AiFrame"
+            src="https://artificialguybr-realvisxl-free-demo.hf.space"
+            title="Ai Membuat gambar"
+            frameborder="0"
+            scrolling="yes"
+            referrerPolicy="no-referrer"
+          ></iframe>
+        </div>
+      </div>
+      
+        <div class="post-tab-content" id="post-content3" style="display:none;">
+              <div class="ta-R">
+        <div class="running-gpu-type">
+  <div class="first-part">
+    <span>Running on <span class="skewed">Zero</span></span>
+  </div>
+  <div class="second-part">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+      <path d="M7.48877 6.75C7.29015 6.75 7.09967 6.82902 6.95923 6.96967C6.81879 7.11032 6.73989 7.30109 6.73989 7.5C6.73989 7.69891 6.81879 7.88968 6.95923 8.03033C7.09967 8.17098 7.29015 8.25 7.48877 8.25C7.68738 8.25 7.87786 8.17098 8.0183 8.03033C8.15874 7.88968 8.23764 7.69891 8.23764 7.5C8.23764 7.30109 8.15874 7.11032 8.0183 6.96967C7.87786 6.82902 7.68738 6.75 7.48877 6.75ZM7.8632 0C11.2331 0 11.3155 2.6775 9.54818 3.5625C8.80679 3.93 8.47728 4.7175 8.335 5.415C8.69446 5.565 9.00899 5.7975 9.24863 6.0975C12.0195 4.5975 15 5.19 15 7.875C15 11.25 12.3265 11.325 11.4428 9.5475C11.0684 8.805 10.2746 8.475 9.57813 8.3325C9.42836 8.6925 9.19621 9 8.89665 9.255C10.3869 12.0225 9.79531 15 7.11433 15C3.74438 15 3.67698 12.315 5.44433 11.43C6.17823 11.0625 6.50774 10.2825 6.65751 9.5925C6.29056 9.4425 5.96855 9.2025 5.72891 8.9025C2.96555 10.3875 0 9.8025 0 7.125C0 3.75 2.666 3.6675 3.54967 5.445C3.92411 6.1875 4.71043 6.51 5.40689 6.6525C5.54918 6.2925 5.78882 5.9775 6.09586 5.7375C4.60559 2.97 5.1972 0 7.8632 0Z"></path>
+    </svg> 
+  </div>
+</div>
+          </div>
+        <h4>
+          <span style="background: linear-gradient(45deg, rgb(78, 172, 239) 0%, rgb(40, 180, 133) 60%); -webkit-background-clip: text; background-clip: text; color: transparent;">ANIMAGINE XL 3.1</span>🌸
+        </h4>
+        <p>
+          Animagine XL 3.1 adalah model Text-To-Image bertema anime yang dikembangkan oleh komunitas pecinta anime yaitu Cagliostro Research Lab yang ditingkatkan dari versi sebelumnya, dengan pengetahuan yang lebih luas, konfigurasi baru untuk mengatasi masalah overexposure, dan tag estetika baru yang kuat untuk menghasilkan gambar anime yang lebih baik.
+        </p>
+        <div class="iframe-container">
+          <div class="iframe-overlay" class="iframe-loading-overlay">
+            <div class="iframe-spinner"></div>
+          </div>
+          <iframe
+            class="AiFrame"
+            src="https://asahina2k-animagine-xl-3-1.hf.space"
+            title="Ai Membuat gambar"
+            frameborder="0"
+            scrolling="yes"
+            referrerPolicy="no-referrer"
+          ></iframe>
+        </div>
+      </div>
+      
+      <div class="post-tab-content" id="post-content4" style="display:none;">
+        <div class="ta-R">
+        <div class="running-gpu-type">
+  <div class="first-part">
+    <span>Running on <span class="skewed">Zero</span></span>
+  </div>
+  <div class="second-part">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+      <path d="M7.48877 6.75C7.29015 6.75 7.09967 6.82902 6.95923 6.96967C6.81879 7.11032 6.73989 7.30109 6.73989 7.5C6.73989 7.69891 6.81879 7.88968 6.95923 8.03033C7.09967 8.17098 7.29015 8.25 7.48877 8.25C7.68738 8.25 7.87786 8.17098 8.0183 8.03033C8.15874 7.88968 8.23764 7.69891 8.23764 7.5C8.23764 7.30109 8.15874 7.11032 8.0183 6.96967C7.87786 6.82902 7.68738 6.75 7.48877 6.75ZM7.8632 0C11.2331 0 11.3155 2.6775 9.54818 3.5625C8.80679 3.93 8.47728 4.7175 8.335 5.415C8.69446 5.565 9.00899 5.7975 9.24863 6.0975C12.0195 4.5975 15 5.19 15 7.875C15 11.25 12.3265 11.325 11.4428 9.5475C11.0684 8.805 10.2746 8.475 9.57813 8.3325C9.42836 8.6925 9.19621 9 8.89665 9.255C10.3869 12.0225 9.79531 15 7.11433 15C3.74438 15 3.67698 12.315 5.44433 11.43C6.17823 11.0625 6.50774 10.2825 6.65751 9.5925C6.29056 9.4425 5.96855 9.2025 5.72891 8.9025C2.96555 10.3875 0 9.8025 0 7.125C0 3.75 2.666 3.6675 3.54967 5.445C3.92411 6.1875 4.71043 6.51 5.40689 6.6525C5.54918 6.2925 5.78882 5.9775 6.09586 5.7375C4.60559 2.97 5.1972 0 7.8632 0Z"></path>
+    </svg> 
+  </div>
+</div>
+          </div>
+        <h4><span style="color:rgb(59,130,246)">PixArt</span>⚡</h4>
+        <p>
+          PixArt adalah model berbasis AI yang mampu menghasilkan karya seni visual dari input teks atau gambar. Model ini merupakan salah satu inovasi dalam bidang generative AI, menggunakan arsitektur khusus yang mirip dengan model diffusion dan transformer.
+        </p>
+        
+    
+        <div class="iframe-container">
+          <div class="iframe-overlay" class="iframe-loading-overlay">
+            <div class="iframe-spinner"></div>
+          </div>
+          <gradio-app class="AiFrame" src="https://kingnish-instant-image.hf.space"></gradio-app>
+        <!--    <iframe
+            class="AiFrame"
+            src="https://kingnish-instant-image.hf.space"
+            title="Ai Membuat gambar"
+            frameborder="0"
+            scrolling="yes"
+            referrerPolicy="no-referrer"
+          ></iframe> -->
+        </div>
+
+      </div>
+
+   
+      
+       <div class="post-tab-content" id="post-content5" style="display:none;">
+             <div class="ta-R">
+        <div class="running-gpu-type">
+  <div class="first-part">
+    <span>Running on <span class="skewed">Zero</span></span>
+  </div>
+  <div class="second-part">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+      <path d="M7.48877 6.75C7.29015 6.75 7.09967 6.82902 6.95923 6.96967C6.81879 7.11032 6.73989 7.30109 6.73989 7.5C6.73989 7.69891 6.81879 7.88968 6.95923 8.03033C7.09967 8.17098 7.29015 8.25 7.48877 8.25C7.68738 8.25 7.87786 8.17098 8.0183 8.03033C8.15874 7.88968 8.23764 7.69891 8.23764 7.5C8.23764 7.30109 8.15874 7.11032 8.0183 6.96967C7.87786 6.82902 7.68738 6.75 7.48877 6.75ZM7.8632 0C11.2331 0 11.3155 2.6775 9.54818 3.5625C8.80679 3.93 8.47728 4.7175 8.335 5.415C8.69446 5.565 9.00899 5.7975 9.24863 6.0975C12.0195 4.5975 15 5.19 15 7.875C15 11.25 12.3265 11.325 11.4428 9.5475C11.0684 8.805 10.2746 8.475 9.57813 8.3325C9.42836 8.6925 9.19621 9 8.89665 9.255C10.3869 12.0225 9.79531 15 7.11433 15C3.74438 15 3.67698 12.315 5.44433 11.43C6.17823 11.0625 6.50774 10.2825 6.65751 9.5925C6.29056 9.4425 5.96855 9.2025 5.72891 8.9025C2.96555 10.3875 0 9.8025 0 7.125C0 3.75 2.666 3.6675 3.54967 5.445C3.92411 6.1875 4.71043 6.51 5.40689 6.6525C5.54918 6.2925 5.78882 5.9775 6.09586 5.7375C4.60559 2.97 5.1972 0 7.8632 0Z"></path>
+    </svg> 
+  </div>
+</div>
+          </div>
+        <h4>
+          <span style="background: linear-gradient(45deg, rgb(255,234,208) 0%, rgb(255,228,120) 20%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                -webkit-text-stroke: 1px rgba(114,91,0, 0.3);">DALL•E 3 XL v2</span>🔒
+        </h4>
+        <p>
+           DALL•E 3 XL v2 adalah model AI generatif terbaru yang mampu menciptakan gambar dengan resolusi sangat tinggi dan detail realistis dari deskripsi teks
+        </p>
+               <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhf4_9EkRgYUkDJUFPyjshWVgHqyd7Kcp0NZpmntISuO-A6l5tC5ivsIktYzPyQP7Bb7VsKdroixAhaFfLsx8eYNx8LrLwQlb3DLHzssVDxiAt40zn3BviiUGSg0GwBuG8odb7L25_fAmM1lIdSkXUd3yP25D4iY6MoJo92VukVKuJVPwbuMTgBhGWXbS2l/s512/ezgif.com-png-to-webp-converter.webp" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="512" data-original-width="512" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhf4_9EkRgYUkDJUFPyjshWVgHqyd7Kcp0NZpmntISuO-A6l5tC5ivsIktYzPyQP7Bb7VsKdroixAhaFfLsx8eYNx8LrLwQlb3DLHzssVDxiAt40zn3BviiUGSg0GwBuG8odb7L25_fAmM1lIdSkXUd3yP25D4iY6MoJo92VukVKuJVPwbuMTgBhGWXbS2l/s600/ezgif.com-png-to-webp-converter.webp"/></a></div>
+         <!--
+        <div class="iframe-container" style="height:2300px!important">
+          <div class="iframe-overlay" class="iframe-loading-overlay">
+            <div class="iframe-spinner"></div>
+          </div>
+          <iframe
+            class="AiFrame"
+            src="https://mexicanamerican-dalle-3-xl-lora-v2.hf.space"
+            title="Ai Membuat gambar"
+            frameborder="0"
+            scrolling="yes"
+            referrerPolicy="no-referrer"
+            style="height:2300px"
+          ></iframe>
+        </div>
+-->
+      </div>
+      
+       <div class="post-tab-content" id="post-content6" style="display:none;">
+             <div class="ta-R">
+        <div class="running-gpu-type">
+  <div class="first-part">
+    <span>Running on <span class="skewed">Zero</span></span>
+  </div>
+  <div class="second-part">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15">
+      <path d="M7.48877 6.75C7.29015 6.75 7.09967 6.82902 6.95923 6.96967C6.81879 7.11032 6.73989 7.30109 6.73989 7.5C6.73989 7.69891 6.81879 7.88968 6.95923 8.03033C7.09967 8.17098 7.29015 8.25 7.48877 8.25C7.68738 8.25 7.87786 8.17098 8.0183 8.03033C8.15874 7.88968 8.23764 7.69891 8.23764 7.5C8.23764 7.30109 8.15874 7.11032 8.0183 6.96967C7.87786 6.82902 7.68738 6.75 7.48877 6.75ZM7.8632 0C11.2331 0 11.3155 2.6775 9.54818 3.5625C8.80679 3.93 8.47728 4.7175 8.335 5.415C8.69446 5.565 9.00899 5.7975 9.24863 6.0975C12.0195 4.5975 15 5.19 15 7.875C15 11.25 12.3265 11.325 11.4428 9.5475C11.0684 8.805 10.2746 8.475 9.57813 8.3325C9.42836 8.6925 9.19621 9 8.89665 9.255C10.3869 12.0225 9.79531 15 7.11433 15C3.74438 15 3.67698 12.315 5.44433 11.43C6.17823 11.0625 6.50774 10.2825 6.65751 9.5925C6.29056 9.4425 5.96855 9.2025 5.72891 8.9025C2.96555 10.3875 0 9.8025 0 7.125C0 3.75 2.666 3.6675 3.54967 5.445C3.92411 6.1875 4.71043 6.51 5.40689 6.6525C5.54918 6.2925 5.78882 5.9775 6.09586 5.7375C4.60559 2.97 5.1972 0 7.8632 0Z"></path>
+    </svg> 
+  </div>
+</div>
+          </div>
+        <h4>
+          <span style="background: linear-gradient(45deg, rgb(255,234,208) 0%, rgb(253,198,139) 20%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 1px rgba(234,88,12, 0.3);">Flux</span>✨
+        </h4>
+        <p>
+          Flux adalah model AI untuk menghasilkan gambar menggunakan diffusion models, teknik yang mengubah noise acak menjadi gambar berdasarkan teks input. Flux dilatih dengan dataset gambar besar, menggabungkan transformer untuk memahami konteks dan gaya, lalu membangun gambar realistis sesuai deskripsi.
+        </p>
+        <div class="iframe-container">
+          <div class="iframe-overlay" class="iframe-loading-overlay">
+            <div class="iframe-spinner"></div>
+          </div>
+          <iframe
+            class="AiFrame"
+            src="https://kingnish-realtime-flux.hf.space"
+            title="Ai Membuat gambar"
+            frameborder="0"
+            scrolling="yes"
+            referrerPolicy="no-referrer"
+          ></iframe>
+        </div>
+      </div>
+      
+      
+      
+      <div class="post-tab-content" id="post-content99" style="display:none;">
+        <h3>Belum tersedia!</h3>
+        <p style="margin-bottom:700px">
+          Maaf belum tersedia.
+        </p>
+      </div>
+    </section>
+
+<p>
+    Proses ini telah mengubah cara kita bekerja dengan gambar. Sebagai contoh, jika Anda seorang desainer grafis atau seniman digital, Anda bisa menggunakan AI untuk langsung menghasilkan ilustrasi berdasarkan tema atau ide yang Anda miliki. Dengan menggunakan <a href="https://www.nopiyar.my.id/2024/07/ai-pembuat-gambar-dengan-konsep-text-to.html" target="_blank">AI Pembuat Gambar dengan konsep Text to Image</a>, Anda dapat menggambarkan sesuatu dalam bentuk kata-kata dan membiarkan teknologi AI membuat gambar yang sesuai dengan imajinasi Anda. Misalnya, jika Anda ingin membuat gambar pemandangan alam dengan matahari terbenam yang indah, cukup ketikkan deskripsi tersebut dan voila, gambar yang dihasilkan akan sangat dekat dengan yang Anda bayangkan 🌅.
+</p>
+
+<p>
+    Keunggulan lainnya adalah AI ini memungkinkan kita untuk menghasilkan karya visual yang unik. Tidak ada dua karya yang sama, karena meskipun menggunakan deskripsi yang sama, hasil akhirnya bisa berbeda-beda tergantung bagaimana model AI tersebut menginterpretasikan kata-kata kita. Ini memberi kebebasan tanpa batasan, yang mana sangat penting untuk industri kreatif. Misalnya, jika Anda seorang content creator atau blogger yang sering memerlukan gambar-gambar unik untuk postingan Anda, Text to Image AI dapat sangat membantu. Anda bisa menghindari masalah hak cipta dengan membuat gambar original yang sesuai dengan topik postingan Anda ✨.
+</p>
+
+<p>
+    Satu hal yang sangat menarik adalah bagaimana teknologi AI ini semakin berkembang dalam bidang lain. Misalnya, teknologi AI untuk <a href="https://www.nopiyar.my.id/2024/07/ai-meningkatkan-kualitas-resolusi-gambar.html" target="_blank">meningkatkan kualitas resolusi gambar</a>. Dulu, jika Anda memiliki gambar dengan resolusi rendah, Anda akan kesulitan untuk menggunakannya dalam proyek-proyek desain. Namun sekarang, dengan menggunakan AI, kualitas gambar dapat ditingkatkan tanpa kehilangan detail penting, memungkinkan gambar lama yang buram bisa menjadi tajam dan jelas kembali hanya dengan beberapa klik 🖼️.
+</p>
+
+<p>
+    AI juga telah merambah ke bidang lain seperti <a href="https://www.nopiyar.my.id/2024/08/ai-penukar-wajah-hasil-kurang-lebih-1.html" target="_blank">AI Penukar Wajah</a>, yang memungkinkan kita untuk mengganti wajah di foto dengan wajah orang lain, dan menghasilkan gambar dengan hasil yang sangat realistis. Tidak hanya di dunia hiburan dan media sosial, teknologi ini juga dapat digunakan di industri keamanan dan kesehatan, di mana pengenalan wajah menjadi bagian penting dari sistem teknologi mereka. AI Penukar Wajah memberikan pengalaman yang sangat menarik dan bisa menghemat waktu dalam banyak proses editing gambar yang biasanya memerlukan keterampilan teknis tinggi ⏳.
+</p>
+
+<p>
+    Selain itu, banyak juga kemajuan AI dalam bidang interaksi manusia dengan komputer, salah satunya adalah dengan menggunakan <a href="https://www.nopiyar.my.id/2024/08/chat-bot.html" target="_blank">Chat Bot AI</a>. Sistem ini memungkinkan kita berinteraksi dengan mesin secara langsung, dengan hasil yang semakin alami dan efisien. Teknologi ini sudah diterapkan di banyak platform e-commerce, layanan pelanggan, dan banyak lagi. Dengan kemampuan untuk memahami dan memberikan respons yang tepat, chat bot dapat memberikan pengalaman yang lebih baik bagi pengguna dan membantu perusahaan dalam meningkatkan efisiensi operasional mereka 🤖.
+</p>
+
+<p>
+    Tidak hanya itu, penerapan AI dalam berbagai bidang terus berkembang dan semakin mempermudah banyak hal. Dari dunia desain grafis hingga interaksi digital, AI telah menjadi bagian integral dari kehidupan sehari-hari kita. Dengan kemampuan untuk membuat gambar dari teks, meningkatkan kualitas gambar, dan memperbaiki proses pengeditan, AI benar-benar membuka potensi baru bagi para profesional di berbagai bidang. Ke depan, kita akan semakin melihat teknologi ini berperan dalam berbagai aspek kehidupan dan memberikan solusi cerdas bagi banyak masalah 🔮.
+</p>
+
+<p>
+    Dengan AI, kreativitas menjadi tidak terbatas. Anda bisa membuat gambar-gambar yang tidak pernah Anda pikirkan sebelumnya, hanya dengan menggunakan deskripsi teks. Ini adalah bukti betapa jauh teknologi telah berkembang, memberikan kemudahan bagi siapa saja untuk menciptakan karya visual tanpa keterampilan teknis yang mendalam. Semuanya menjadi lebih mudah, lebih cepat, dan lebih menyenangkan, yang tentunya berpotensi mengubah cara kita berkreasi di dunia digital 💡.
+</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const iframes = document.querySelectorAll('.AiFrame');
+          iframes.forEach((iframe) => {
+              iframe.onload = function() {
+                  const overlay = this.previousElementSibling;
+                  setTimeout(() => {
+                      overlay.classList.add('hidden');
+                  }, 1300);
+              };
+          });
+      });
+
+    </script>
+
+<script>
+let scrollInterval;
+let isScrolling = false;
+
+document.getElementById('scroll-left').addEventListener('mousedown', function() {
+    startScrolling(-200);
+});
+document.getElementById('scroll-right').addEventListener('mousedown', function() {
+    startScrolling(200);
+});
+
+document.addEventListener('mouseup', stopScrolling);
+document.getElementById('scroll-left').addEventListener('mouseleave', stopScrolling);
+document.getElementById('scroll-right').addEventListener('mouseleave', stopScrolling);
+
+// Add touch event listeners
+document.getElementById('scroll-left').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    startScrolling(-200);
+});
+document.getElementById('scroll-right').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    startScrolling(200);
+});
+
+document.addEventListener('touchend', stopScrolling);
+document.getElementById('scroll-left').addEventListener('touchend', stopScrolling);
+document.getElementById('scroll-right').addEventListener('touchend', stopScrolling);
+
+document.getElementById('tab-container').addEventListener('scroll', checkScroll);
+
+function startScrolling(direction) {
+    if (scrollInterval) return;
+    isScrolling = true;
+    scrollInterval = setInterval(function() {
+        var container = document.getElementById('tab-container');
+        container.scrollBy({
+            left: direction,
+            behavior: 'smooth'
+        });
+        checkScroll();
+    }, 100); // Adjust the interval time as needed
+}
+
+function stopScrolling() {
+    clearInterval(scrollInterval);
+    scrollInterval = null;
+    setTimeout(() => isScrolling = false, 100); // Add a delay to prevent immediate clicks after scrolling
+}
+
+function checkScroll() {
+    var container = document.getElementById('tab-container');
+    var scrollLeft = container.scrollLeft;
+    var maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+    if (scrollLeft <= 0) {
+        document.getElementById('scroll-left').classList.add('hidden');
+    } else {
+        document.getElementById('scroll-left').classList.remove('hidden');
+    }
+
+    if (scrollLeft >= maxScrollLeft) {
+        document.getElementById('scroll-right').classList.add('hidden');
+    } else {
+        document.getElementById('scroll-right').classList.remove('hidden');
+    }
+}
+
+checkScroll();
+window.addEventListener('resize', checkScroll);
+
+
+</script>
+
+    <script>
+       // Function to show the tab content
+    function showTab(tabId) {
+        document.querySelectorAll('.post-tab-content').forEach(content => {
+            content.style.display = 'none';
+        });
+        document.getElementById(tabId).style.display = 'block';
+        localStorage.setItem('activeTab', tabId);
+    }
+
+    document.querySelectorAll('.post-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.post-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            showTab(tab.getAttribute('onclick').match(/'([^']+)'/)[1]);
+        });
+
+        // Add touch event for tabs
+        tab.addEventListener('touchstart', function() {
+            document.querySelectorAll('.post-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            showTab(tab.getAttribute('onclick').match(/'([^']+)'/)[1]);
+        });
+    });
+
+    // Load the active tab from localStorage
+    window.onload = function() {
+        const activeTab = localStorage.getItem('activeTab') || 'post-content1';
+        showTab(activeTab);
+        document.querySelectorAll('.post-tab').forEach(tab => {
+            if (tab.getAttribute('onclick').includes(activeTab)) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+    };
+
+    </script>
+
+
+    <script>
+// Menggunakan event listener untuk toggle konten saat head di-klik
+document.addEventListener("DOMContentLoaded", function() {
+    var faqHeads = document.querySelectorAll('.post-blog-faq-head');
+    
+    faqHeads.forEach(function(faqHead) {
+        faqHead.addEventListener('click', function() {
+            var faqItem = this.parentElement;
+            var faqContent = faqItem.querySelector('.post-blog-faq-content');
+            
+            // Toggle display dengan animasi
+            if (faqContent.style.display === 'block') {
+                faqContent.style.display = 'none';
+                faqHead.classList.remove('active');
+                faqContent.style.animation = 'postSlideUp 0.3s forwards';
+            } else {
+                faqContent.style.display = 'block';
+                faqHead.classList.add('active');
+                faqContent.style.animation = 'postSlideDown 0.3s forwards';
+            }
+        });
+    });
+});
+</script>
