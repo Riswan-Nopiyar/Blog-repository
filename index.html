@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Playground</title>
+    <style>
+      /* Parent container */
+      .PlygCon {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      /* Toolbar */
+      .PlygCon .Xy2k9 {
+        background: #2c3e50;
+        color: white;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Run button */
+      .PlygCon .Ab3Lp {
+        background: #27ae60;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: background 0.2s;
+      }
+
+      .PlygCon .Ab3Lp:hover {
+        background: #2ecc71;
+      }
+
+      /* Main container */
+      .PlygCon .Rt5mN {
+        display: flex;
+        height: calc(100vh - 50px);
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      /* Editor and result panes */
+      .PlygCon .Ed7f2,
+      .PlygCon .Rs4t8 {
+        width: 50%;
+        min-width: 100px;
+        max-width: calc(100% - 100px);
+        height: 100%;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      /* Result pane */
+      .PlygCon .Rs4t8 {
+        flex: 1;
+        border-left: 1px solid #34495e;
+        background: #f9f9f9;
+      }
+
+      /* Code editor */
+      .PlygCon .Cd9rT {
+        height: 100%;
+        width: 100%;
+      }
+
+      /* Result iframe */
+      .PlygCon .Fr6mK {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: white;
+      }
+
+      /* Size info */
+      .PlygCon .Sz1nF {
+        margin-left: auto;
+        padding-right: 15px;
+        font-size: 14px;
+      }
+
+      /* Theme selector */
+      .PlygCon .Th4mS {
+        margin-left: 15px;
+        padding: 6px 10px;
+        border-radius: 4px;
+        border: 1px solid #34495e;
+        background: #34495e;
+        color: white;
+      }
+
+      /* Responsive design for small screens */
+      @media (max-width: 768px) {
+        .PlygCon .Rt5mN {
+          flex-direction: column;
+        }
+
+        .PlygCon .Ed7f2,
+        .PlygCon .Rs4t8 {
+          width: 100%;
+          height: 50%;
+          width: 50%;
+          min-width: 100%;
+          max-width: 100%;
+        }
+
+        .PlygCon .Ed7f2 {
+          order: 1; /* Editor tetap di atas */
+        }
+
+        .PlygCon .Rs4t8 {
+          order: 2; /* Hasil di bawah */
+          border-left: none;
+          border-top: 1px solid #34495e;
+        }
+      }
+      @media (max-width: 768px) {
+        .PlygCon #resize-handle {
+          display: none;
+        }
+      }
+
+      /* Theme toggle button */
+      .PlygCon .Dm3tG {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+      }
+
+      .PlygCon .Dm3tG label {
+        margin-right: 8px;
+        font-size: 14px;
+      }
+
+      /* CodeMirror overrides */
+      .PlygCon .CodeMirror {
+        height: 100% !important;
+        font-family: "Fira Code", Consolas, Monaco, "Andale Mono", monospace;
+        font-size: 14px;
+      }
+
+      /* High contrast syntax highlighting */
+      .cm-s-monokai.CodeMirror {
+        background: #272822;
+        color: #f8f8f2;
+      }
+      .cm-s-monokai .CodeMirror-gutters {
+        background: #272822;
+        border-right: 0;
+      }
+      .cm-s-monokai .CodeMirror-linenumber {
+        color: #75715e;
+      }
+      .cm-s-monokai .CodeMirror-cursor {
+        border-left: 1px solid #f8f8f2;
+      }
+      .cm-s-monokai .cm-keyword {
+        color: #f92672;
+        font-weight: bold;
+      }
+      .cm-s-monokai .cm-atom {
+        color: #ae81ff;
+      }
+      .cm-s-monokai .cm-number {
+        color: #ae81ff;
+      }
+      .cm-s-monokai .cm-def {
+        color: #fd971f;
+      }
+      .cm-s-monokai .cm-variable {
+        color: #f8f8f2;
+      }
+      .cm-s-monokai .cm-property {
+        color: #a6e22e;
+      }
+      .cm-s-monokai .cm-operator {
+        color: #f92672;
+      }
+      .cm-s-monokai .cm-comment {
+        color: #75715e;
+      }
+      .cm-s-monokai .cm-string {
+        color: #e6db74;
+      }
+      .cm-s-monokai .cm-tag {
+        color: #f92672;
+      }
+      .cm-s-monokai .cm-attribute {
+        color: #a6e22e;
+      }
+      .cm-s-monokai .cm-qualifier {
+        color: #a6e22e;
+      }
+      .cm-s-monokai .cm-meta {
+        color: #75715e;
+      }
+
+      /* Color picker styles */
+      .color-preview {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #ccc;
+        margin-left: 5px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      .color-picker-popup {
+        position: absolute;
+        z-index: 1000;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: none;
+      }
+    </style>
+    <style>
+      /* CSS untuk resize handle - Perbaikan */
+      .resize-handle {
+        width: 8px;
+        background-color: #7f8c8d;
+        cursor: col-resize;
+        height: 100%;
+        transition: background-color 0.2s;
+        position: relative;
+        z-index: 10;
+      }
+
+      .resize-handle:hover {
+        background-color: #3498db;
+      }
+    </style>
+  </head>
+  <body class="PlygCon">
+    <div class="Xy2k9">
+      <div class="Dm3tG">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select" class="Th4mS">
+          <option value="default">Light</option>
+          <option value="monokai" selected>Dark (High Contrast)</option>
+          <option value="dracula">Dracula</option>
+          <option value="material">Material</option>
+        </select>
+      </div>
+      <button id="run-btn" class="Ab3Lp">Run</button>
+      <div id="result-size" class="Sz1nF">Result Size: 640 x 480</div>
+    </div>
+
+    <div class="Rt5mN">
+      <div class="Ed7f2">
+        <div id="editor" class="Cd9rT"></div>
+      </div>
+      <div class="resize-handle" id="resize-handle"></div>
+      <div class="Rs4t8">
+        <iframe id="result-frame" class="Fr6mK"></iframe>
+      </div>
+    </div>
+
+    <div id="color-picker" class="color-picker-popup">
+      <input type="color" id="color-picker-input" />
+      <div id="color-hex" style="margin-top: 5px; font-family: monospace"></div>
+    </div>
+
+    <!-- Load CodeMirror and addons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/monokai.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/material.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/show-hint.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/html-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/css-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/edit/closetag.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/selection/active-line.min.js"></script>
+
+    <script>
+      // Initial HTML code
+      const initialCode = `<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+h1 {
+    color: #2980b9;
+}
+.container {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>HTML Playground</h1>
+    <p>Start editing to see the result!</p>
+    <p>Try using code suggestions with Ctrl+Space</p>
+    <p>For CSS colors, click on the color preview to use the color picker</p>
+    <button>Click Me</button>
+</div>
+
+</body>
+</html>`;
+
+      // Initialize editor
+      const editor = CodeMirror(document.getElementById("editor"), {
+        value: initialCode,
+        mode: "htmlmixed",
+        lineNumbers: true,
+        indentUnit: 4,
+        tabSize: 4,
+        theme: "monokai",
+        autoCloseTags: true,
+        autoCloseBrackets: true,
+        matchBrackets: true,
+        styleActiveLine: true,
+        lineWrapping: true,
+        extraKeys: {
+          "Ctrl-Space": "autocomplete",
+          Tab: function (cm) {
+            if (cm.somethingSelected()) {
+              cm.indentSelection("add");
+            } else {
+              cm.replaceSelection("    ", "end");
+            }
+          },
+        },
+      });
+
+      // Get elements
+      const runBtn = document.getElementById("run-btn");
+      const resultFrame = document.getElementById("result-frame");
+      const resultSize = document.getElementById("result-size");
+      const colorPicker = document.getElementById("color-picker");
+      const colorPickerInput = document.getElementById("color-picker-input");
+      const colorHex = document.getElementById("color-hex");
+
+      const themeSelect = document.getElementById("theme-select");
+
+      // Cek dan terapkan tema yang disimpan sebelumnya (jika ada)
+      const savedTheme = localStorage.getItem("selectedTheme");
+      if (savedTheme) {
+        themeSelect.value = savedTheme;
+        editor.setOption("theme", savedTheme); // Terapkan ke editor
+      } else {
+        editor.setOption("theme", themeSelect.value); // Default dari select
+      }
+
+      // Handler perubahan tema
+      themeSelect.addEventListener("change", function () {
+        const selectedTheme = this.value;
+        editor.setOption("theme", selectedTheme); // Terapkan ke editor
+        localStorage.setItem("selectedTheme", selectedTheme); // Simpan ke storage
+      });
+
+      // Update result function
+      function updateResult() {
+        const code = editor.getValue();
+        const resultDoc =
+          resultFrame.contentDocument || resultFrame.contentWindow.document;
+
+        resultDoc.open();
+        resultDoc.write(code);
+        resultDoc.close();
+
+        // Update size display
+        setTimeout(() => {
+          const width = resultFrame.offsetWidth;
+          const height = resultFrame.offsetHeight;
+          resultSize.textContent = `Result Size: ${width} x ${height}`;
+        }, 100);
+      }
+
+      // Run button click event
+      runBtn.addEventListener("click", updateResult);
+
+      // Initial render
+      updateResult();
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        const width = resultFrame.offsetWidth;
+        const height = resultFrame.offsetHeight;
+        resultSize.textContent = `Result Size: ${width} x ${height}`;
+      });
+
+      // Color picker functionality
+      let currentColorMark = null;
+
+      // Add color previews to CSS color values
+      function addColorPreviews() {
+        editor
+          .getDoc()
+          .getAllMarks()
+          .forEach((mark) => {
+            if (mark.className === "color-preview") {
+              mark.clear();
+            }
+          });
+
+        const doc = editor.getDoc();
+        const content = doc.getValue();
+        const colorRegex = /#[0-9a-fA-F]{3,6}/g;
+        let match;
+
+        while ((match = colorRegex.exec(content)) !== null) {
+          const start = doc.posFromIndex(match.index);
+          const end = doc.posFromIndex(match.index + match[0].length);
+
+          const colorPreview = document.createElement("span");
+          colorPreview.className = "color-preview";
+          colorPreview.style.backgroundColor = match[0];
+          colorPreview.dataset.color = match[0];
+
+          doc.markText(start, end, {
+            atomic: false,
+            className: "color-preview-container",
+            replacedWith: colorPreview,
+            handleMouseEvents: true,
+            color: match[0],
+          });
+
+          colorPreview.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Position the color picker
+            const rect = this.getBoundingClientRect();
+            colorPicker.style.left = rect.left + "px";
+            colorPicker.style.top = rect.bottom + 5 + "px";
+
+            // Set the current color
+            colorPickerInput.value = this.dataset.color;
+            colorHex.textContent = this.dataset.color;
+
+            // Show the color picker
+            colorPicker.style.display = "block";
+
+            // Store the current mark
+            currentColorMark = this;
+          });
+        }
+      }
+
+      // Update color when using the color picker
+      colorPickerInput.addEventListener("input", function () {
+        if (currentColorMark) {
+          const color = this.value;
+          colorHex.textContent = color;
+
+          // Find the position of the color in the document
+          const marks = editor.getDoc().getAllMarks();
+          for (let mark of marks) {
+            if (mark.replacedWith === currentColorMark) {
+              const pos = mark.find();
+              editor.getDoc().replaceRange(color, pos.from, pos.to);
+              break;
+            }
+          }
+
+          // Refresh color previews
+          setTimeout(addColorPreviews, 10);
+        }
+      });
+
+      // Close color picker when clicking outside
+      document.addEventListener("click", function (e) {
+        if (
+          !colorPicker.contains(e.target) &&
+          !e.target.classList.contains("color-preview")
+        ) {
+          colorPicker.style.display = "none";
+        }
+      });
+
+      // Auto-complete for HTML, CSS, and JavaScript
+      editor.on("keyup", (cm, event) => {
+        if (
+          (!cm.state.completionActive &&
+            event.keyCode >= 65 &&
+            event.keyCode <= 90) || // A-Z
+          event.keyCode === 190 || // period
+          event.keyCode === 189 || // dash
+          event.keyCode === 187 || // equal
+          event.keyCode === 219 || // open bracket
+          event.keyCode === 221
+        ) {
+          // close bracket
+          CodeMirror.commands.autocomplete(cm);
+        }
+      });
+
+      // Add color previews on changes
+      editor.on("change", () => {
+        setTimeout(addColorPreviews, 100);
+      });
+
+      // Initialize color previews
+      setTimeout(addColorPreviews, 500);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Perbaikan typo ID dari 'resize-handle' menjadi 'resize-handle'
+        const resizeHandle = document.getElementById("resize-handle");
+        const leftPanel = document.querySelector(".Ed7f2");
+        const rightPanel = document.querySelector(".Rs4t8");
+        const container = document.querySelector(".Rt5mN");
+
+        let isResizing = false;
+        let startX, startWidth;
+
+        // Pastikan elemen handle ada
+        if (!resizeHandle) {
+          console.error("Resize handle element not found!");
+          return;
+        }
+
+        resizeHandle.addEventListener("mousedown", function (e) {
+          isResizing = true;
+          startX = e.clientX;
+          startWidth = leftPanel.offsetWidth;
+
+          // Style selama resize
+          document.body.style.cursor = "col-resize";
+          document.body.style.userSelect = "none";
+          document.body.style.pointerEvents = "none";
+
+          resizeHandle.style.backgroundColor = "#3498db";
+          resizeHandle.style.transition = "none";
+
+          e.preventDefault();
+          e.stopPropagation();
+        });
+
+        function handleMouseMove(e) {
+          if (!isResizing) return;
+
+          const containerRect = container.getBoundingClientRect();
+          const newLeftWidth = startWidth + e.clientX - startX;
+
+          // Batasan ukuran
+          const minWidth = 100;
+          const maxWidth = containerRect.width - 100;
+
+          // Terapkan ukuran baru dengan batasan
+          const clampedWidth = Math.max(
+            minWidth,
+            Math.min(maxWidth, newLeftWidth)
+          );
+          leftPanel.style.width = `${clampedWidth}px`;
+
+          // Update iframe size display jika diperlukan
+          const resultFrame = document.getElementById("result-frame");
+          if (resultFrame) {
+            const width = resultFrame.offsetWidth;
+            const height = resultFrame.offsetHeight;
+            const resultSize = document.getElementById("result-size");
+            if (resultSize) {
+              resultSize.textContent = `Result Size: ${width} x ${height}`;
+            }
+          }
+        }
+
+        function handleMouseUp() {
+          if (!isResizing) return;
+
+          isResizing = false;
+
+          // Kembalikan style
+          document.body.style.cursor = "";
+          document.body.style.userSelect = "";
+          document.body.style.pointerEvents = "";
+
+          resizeHandle.style.backgroundColor = "";
+          resizeHandle.style.transition = "";
+        }
+
+        // Gunakan passive: false untuk event resize
+        document.addEventListener("mousemove", handleMouseMove, {
+          passive: false,
+        });
+        document.addEventListener("mouseup", handleMouseUp);
+
+        // Handle kasus ketika mouse keluar dari window
+        window.addEventListener("mouseleave", handleMouseUp);
+      });
+    </script>
+  </body>
+</html>
