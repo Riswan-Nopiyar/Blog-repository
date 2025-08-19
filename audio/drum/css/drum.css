@@ -1,0 +1,66 @@
+        
+        .cymbal-animation {
+          position: relative;
+          transition: transform 0.15s ease-out;
+          cursor: pointer;
+          transform-origin: center bottom;
+        }
+        
+        .cymbal-hit {
+          transform: rotate(-8deg) scale(1.02);
+        }
+        
+        .cymbal-sway {
+          animation: cymbalSway 0.4s ease-out;
+        }
+        
+        @keyframes cymbalSway {
+          0% { transform: rotate(0deg); }
+          25% { transform: rotate(-10deg) scale(1.02); }
+          75% { transform: rotate(5deg) scale(1.01); }
+          100% { transform: rotate(0deg); }
+        }
+        
+        .drum-hit {
+          animation: drumHit 0.2s ease-out;
+        }
+        
+        @keyframes drumHit {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+        }
+        
+        .key-indicator {
+          position: relative;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-weight: bold;
+          font-size: 14px;
+          pointer-events: none;
+          z-index: 10;
+          transition: all 0.1s ease;
+        }
+        
+        .key-pressed {
+          background: rgba(59, 130, 246, 0.9) !important;
+          transform: scale(1.1) !important;
+        }
+        
+        .invisible-hitbox {
+          position: relative;
+          cursor: pointer;
+          z-index: 5;
+          transition: transform 0.1s ease;
+        }
+        
+        .drum-kit-fade {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+        
+        .drum-kit-visible {
+          opacity: 1;
+        }
